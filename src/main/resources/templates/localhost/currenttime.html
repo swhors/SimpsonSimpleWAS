@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+    <title>
+        CurrentTime
+    </title>
+</head>
+  
+<body>
+    <script type="text/javascript">
+        var current = new Date();
+        var myDay = current.getDay();
+        
+        // Array of days.
+        var weekday = ['SUNDAY', 'MONDAY', 'TUESDAY',
+            'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'
+        ];
+        // get hour value.
+        let today = new Date().toISOString().slice(0, 10)
+        var myTime = current.getHours() + ":" + current.getMinutes() +
+            ":" + current.getSeconds();
+
+        document.write("<p>");
+        document.write("Today is " + weekday[myDay] + ".");
+        document.write("<br/>");
+        document.write("\tCurrent date => " + today);
+        document.write("<br/>");
+        document.write("\tCurrent time => " + myTime);
+        document.write("</p>");
+    </script>
+</body>
+  
+</html>

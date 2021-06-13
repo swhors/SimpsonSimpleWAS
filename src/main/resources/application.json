@@ -1,0 +1,38 @@
+{
+  "server": {
+    "port": 8081
+  },
+  "html": {
+    "errorFiles": [
+      {"errorType":"400","fileName":"/400.html"},
+      {"errorType":"403","fileName":"/403.html"},
+      {"errorType":"404","fileName":"/404.html"},
+      {"errorType":"500","fileName":"/500.html"}
+    ]
+  },
+  "policy": {
+    "blacklist":["../", ".exe"],
+    "urls": [
+      {
+        "address": "localhost",
+        "rootDir": "/localhost",
+        "className": "com.simpson.domain.url.urlloader.LocalLoader",
+        "controllers": [
+          {"path": "/Hello", "className": "com.simpson.domain.controller.Hello"},
+          {"path": "/CurrentTime", "className": "com.simpson.domain.controller.CurrentTime"},
+          {"path": "/service.Hello", "className": "com.simpson.domain.controller.service.Hello"},
+          {"path": "/service.CurrentTime", "className": "com.simpson.domain.controller.service.CurrentTime"}
+        ]
+      },
+      {
+        "address": "simpson.com",
+        "rootDir": "/simpson_com",
+        "className": "com.simpson.domain.url.urlloader.SimpsonLoader",
+        "controllers": [
+          {"path": "/Hello", "className": "com.simpson.domain.controller.Hello"},
+          {"path": "/service.Hello", "className": "com.simpson.domain.controller.service.Hello"}
+        ]
+      }
+    ]
+  }
+}
